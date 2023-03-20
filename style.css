@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+
+  --main-background-color: #f6f7fb;
+  --main-disable-color: #e0e0e0;
+  --main-steps-color: #999;
+  --main-progress-color: #3498db;
+  --color-white: #fff;
+  --main-font-size: 14px
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  -webkit-user-drag: none;
+}
+
+html,
+body {
+  width: 100vw;
+  min-height: 100dvh;
+  background: var(--main-background-color);
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--main-font-size);
+  font-size: var(--main-font-size);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 350px;
+  height: 30px;
+}
+
+.steps {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+}
+
+
+
+.steps::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  top: 50%;
+  bottom: 50%;
+  background: var(--main-disable-color);
+}
+
+.progress {
+  position: absolute;
+  width: 0;
+  height: 4px;
+  left: 0;
+  top: 50%;
+  bottom: 50%;
+  background: var(--main-progress-color);
+  transition: ease .4s;
+}
+
+.step {
+  background: var(--color-white);
+  border: 3px solid var(--main-disable-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  z-index: 1;
+  text-align: center;
+}
+
+.button {
+  background: var(--main-progress-color);
+  border: none;
+  margin: 5px;
+  color: var(--color-white);
+  font-size: var(--main-font-size);
+  padding: 8px 30px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.progressed {
+  border-color: var(--main-progress-color);
+  transition: ease .4s;
+}
+
+
+.disabledButton {
+  cursor: not-allowed;
+  background: var(--main-disable-color);
+}
